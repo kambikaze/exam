@@ -1,6 +1,8 @@
 import java.util.Random;
+
 class NumGen implements Runnable {
-public int rand;
+    public int rand;
+
 public void run() {
 for (int i = 0; i < 5; i++) {
 Random r = new Random();
@@ -30,29 +32,35 @@ System.out.println("[Thead 1] Sleep Exception " + err);
 }
 }
 }
-10
 }
+
 class EvenGen implements Runnable {
-int val;
-EvenGen(int val) {
-this.val = val;
-}
+    int val;
+
+    EvenGen(int val) {
+        this.val = val;
+    }
+
 public void run() {
 System.out.println(String.format("[Thread 2] : Square of %d is -> %d\n", this.val,}
 }
+
 class OddGen implements Runnable {
-int val;
-OddGen(int val) {
-this.val = val;
-}
+    int val;
+
+    OddGen(int val) {
+        this.val = val;
+    }
+
 public void run() {
 System.out.println(
 String.format("[Thread 3] : Cube of %d is -> %d\n", this.val, this.val * t}
 }
+
 class Main {
-public static void main(String[] args) {
-NumGen num = new NumGen();
-Thread t = new Thread(num);
-t.start();
-}
+    public static void main(String[] args) {
+        NumGen num = new NumGen();
+        Thread t = new Thread(num);
+        t.start();
+    }
 }
